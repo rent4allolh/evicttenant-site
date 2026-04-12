@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Evictly</title>
+  
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <meta name="theme-color" content="#050505" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="icon" type="image/png" href="images/evictly-tenant-eviction-services-ontario-logo.png" />
+
+  <style>
+    /* ROOT VARIABLES */
+    :root {
+      --black: #050505;
+      --black-soft: #0b0f15;
+      --white: #ffffff;
+      --white-soft: #f7f8fb;
+      --white-card: #ffffff;
+      --text-dark: #111827;
+      --text-med: #4b5563;
+      --text-light: #b8c0cc;
+      --line-light: rgba(17, 24, 39, 0.08);
+      --line-dark: rgba(255, 255, 255, 0.10);
+      --line-dark-strong: rgba(255, 255, 255, 0.16);
+      --blue: #4f8fe6;
+      --blue-dark: #3d7bd1;
+      --blue-soft: #eef5ff;
+      --max-width: 1240px;
+      --radius: 22px;
+      --shadow-soft: 0 18px 50px rgba(17, 24, 39, 0.08);
+    }
+
+    /* RESET / GLOBAL */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--white-soft); color: var(--text-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .section { padding: 88px 0; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 56px; padding: 0 24px; border-radius: 999px; border: 1px solid transparent;
+      font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s ease;
+      white-space: nowrap; text-align: center;
+    }
+    .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 10px 26px rgba(79, 143, 230, 0.22); }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-secondary-dark { background: rgba(255, 255, 255, 0.04); border-color: var(--line-dark-strong); color: var(--white); }
+    .btn-secondary-dark:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.25); }
+
+    /* HEADER */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #000000; border-bottom: 1px solid var(--line-dark);
+    }
+    .header-inner { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; flex-shrink: 0; min-width: 0; }
+    .brand img { width: auto; height: 92px; object-fit: contain; }
+    .desktop-nav { display: none; align-items: center; gap: 30px; }
+    .desktop-nav a { color: #e9eef7; font-size: 16px; font-weight: 500; transition: color 0.2s ease; }
+    .desktop-nav a:hover { color: var(--blue); }
+    .header-actions { display: none; align-items: center; gap: 14px; flex-shrink: 0; }
+    .menu-toggle {
+      appearance: none; width: 48px; height: 48px; border-radius: 14px;
+      border: 1px solid var(--line-dark-strong); background: transparent; color: var(--white);
+      font-size: 24px; display: inline-flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0;
+    }
+    .mobile-menu { display: none; padding: 0 0 18px; border-top: 1px solid var(--line-dark); }
+    .mobile-menu.open { display: block; }
+    .mobile-links { display: grid; gap: 6px; padding-top: 16px; }
+    .mobile-links a { padding: 10px 2px; color: var(--text-light); font-size: 16px; }
+    .mobile-actions { display: grid; gap: 12px; margin-top: 14px; }
+
+    /* LEGAL CONTENT CONTAINER */
+    .legal-container {
+      background: var(--white-card);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius);
+      padding: 50px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-soft);
+    }
+    .legal-container h1 { margin-top: 0; color: var(--text-dark); font-size: 32px; letter-spacing: -0.03em; }
+    .legal-container h2 { color: var(--text-dark); font-size: 24px; margin-top: 40px; margin-bottom: 15px; border-bottom: 2px solid var(--line-light); padding-bottom: 8px;}
+    .legal-container h3 { color: var(--blue-dark); font-size: 18px; margin-top: 30px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em;}
+    .legal-container p, .legal-container li { color: var(--text-med); font-size: 16px; line-height: 1.8; margin-bottom: 15px; }
+    .legal-container ul { padding-left: 20px; margin-bottom: 25px;}
+    .legal-container strong { color: var(--text-dark); }
+
+    /* FOOTER */
+    .site-footer {
+      background: #000000; border-top: 1px solid var(--line-dark);
+      padding: 74px 0 30px; color: var(--white);
+    }
+    .footer-brand-logo { width: min(100%, 290px); height: auto; object-fit: contain; margin-bottom: 18px; }
+    .footer-copy { color: var(--text-light); font-size: 18px; line-height: 1.7; max-width: 440px; }
+    .footer-title { margin: 0 0 16px; font-size: 15px; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 0.08em; }
+    .footer-links, .footer-meta { display: grid; gap: 12px; }
+    .footer-links a, .footer-meta div, .footer-meta a { color: var(--text-light); font-size: 18px; line-height: 1.55; }
+    .footer-grid { display: grid; gap: 20px; }
+    .footer-bottom {
+      margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line-dark);
+      display: flex; flex-direction: column; gap: 10px; color: var(--muted-2);
+      font-size: 16px; line-height: 1.6;
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1fr; }
+    }
+    @media (min-width: 1100px) {
+      .desktop-nav, .header-actions { display: flex; }
+      .menu-toggle { display: none; }
+    }
+    @media (max-width: 1099px) {
+      .header-inner { min-height: 104px; }
+      .brand img { height: 76px; }
+    }
+    @media (max-width: 767px) {
+      .section { padding: 40px 0; }
+      .brand img { height: 56px; }
+      .legal-container { padding: 30px 20px; border-radius: 16px; }
+      .legal-container h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Evictly home">
+          <img
+            src="images/evictly-tenant-eviction-services-ontario-logo.png"
+            alt="Evictly Tenant Eviction Services Ontario logo"
+            title="Evictly Tenant Eviction Services Ontario"
+          />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#technology">Our Technology</a>
+          <a href="index.html#pricing">Compare Pricing</a>
+          <a href="index.html#coverage">Ontario Coverage</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-secondary-dark" href="index.html#book-strategy">Free Consultation</a>
+          <a class="btn btn-primary" href="index.html#start-file">Start Your File</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open mobile menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#technology">Our Technology</a>
+          <a href="index.html#pricing">Compare Pricing</a>
+          <a href="index.html#coverage">Ontario Coverage</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#book-strategy">Free Consultation</a>
+        </div>
+        <div class="mobile-actions">
+          <a class="btn btn-secondary-dark" href="index.html#book-strategy">Free Consultation</a>
+          <a class="btn btn-primary" href="index.html#start-file">Start Your File</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <div class="container">
+        
+        <div class="legal-container">
+          <h1>Privacy Policy</h1>
+          <p style="font-weight: 700; color: var(--text-dark); margin-bottom: 30px; border-bottom: 1px solid var(--line-light); padding-bottom: 20px;">
+            Last Updated: April 2026
+          </p>
+
+          <p>
+            RENT4ALL PROPERTY MANAGEMENT INC. OPERATING AS OLH PROPERTY MANAGEMENT ("we," "us," "our," or "Evictly") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website (evicttenant.ca) or use our property management and legal guarantee services in accordance with the <em>Personal Information Protection and Electronic Documents Act (PIPEDA)</em>.
+          </p>
+
+          <h2>1. Information We Collect</h2>
+          <p>In order to provide you with property management and paralegal representation services, we collect the following types of information:</p>
+          <ul>
+            <li><strong>Personal Identification Information:</strong> Name, email address, phone number, and mailing address of the property owner (Landlord).</li>
+            <li><strong>Property and Tenant Information:</strong> Lease agreements, rent ledgers, notices of termination, tenant contact details, and any evidence required for Landlord and Tenant Board (LTB) filings.</li>
+            <li><strong>Financial Information:</strong> Payment details securely processed through our third-party payment gateway (Stripe). We do not directly store full credit card numbers on our servers.</li>
+          </ul>
+
+          <h2>2. How We Use Your Information</h2>
+          <p>We use the information we collect primarily to deliver our contractual obligations to you. This includes:</p>
+          <ul>
+            <li>Filing and managing Landlord and Tenant Board (LTB) applications on your behalf.</li>
+            <li>Communicating with you regarding the status of your file, property management updates, and billing.</li>
+            <li>Processing subscription payments and onboarding deposits.</li>
+            <li>Reporting outstanding tenant debts via our LandlordEzy.ca integration.</li>
+          </ul>
+
+          <h2>3. Third-Party Service Providers</h2>
+          <p>To provide a modern, secure, and efficient service, we utilize industry-leading third-party platforms. By using our services, you acknowledge that your data may be processed by the following partners under their respective privacy and security protocols:</p>
+          <ul>
+            <li><strong>Stripe:</strong> Used for secure payment processing and subscription management. Stripe securely collects and processes your financial data.</li>
+            <li><strong>Buildium:</strong> Our primary property management software and client portal. Buildium is used to securely store lease agreements, rent ledgers, and LTB documents, and to provide you with real-time file tracking.</li>
+            <li><strong>HubSpot:</strong> Used for scheduling strategy sessions, customer relationship management (CRM), and communications.</li>
+            <li><strong>Equifax:</strong> Used via LandlordEzy.ca for the lawful reporting of outstanding tenant debts resulting from LTB Orders and Judgments.</li>
+          </ul>
+
+          <h2>4. Data Security and Retention</h2>
+          <p>We implement appropriate technical and organizational security measures designed to protect your personal information against accidental or unlawful destruction, loss, alteration, and unauthorized disclosure. We retain personal and property information only for as long as necessary to fulfill the purposes for which it was collected, including satisfying any legal, accounting, or reporting requirements in the Province of Ontario.</p>
+
+          <h2>5. Disclosure of Information</h2>
+          <p>We do not sell, trade, or rent your personal identification information to outside parties. We may disclose your information strictly when legally required to do so, such as submitting documents to the Landlord and Tenant Board (LTB), the Sheriff's Enforcement Office, or as required by a court of law.</p>
+
+          <h2>6. Your Rights</h2>
+          <p>Under PIPEDA, you have the right to request access to the personal information we hold about you, request corrections to any inaccurate data, and withdraw your consent for data processing (subject to legal or contractual restrictions). To exercise any of these rights, please contact us using the information below.</p>
+
+          <h2>7. Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how your personal information is handled, please contact our administrative office:</p>
+          <p>
+            <strong>OLH Property Management</strong><br>
+            1201 Ottawa St.<br>
+            Windsor, ON N8X 2E5<br>
+            Canada
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img
+            class="footer-brand-logo"
+            src="images/evictly-tenant-eviction-services-ontario-logo.png"
+            alt="Evictly Tenant Eviction Services Ontario logo"
+          />
+          <div class="footer-copy">
+            Ontario-focused landlord support website built to attract and convert
+            tenant eviction leads throughout the province.
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <div class="footer-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#coverage">Ontario Coverage</a>
+            <a href="index.html#book-strategy">Book Consultation</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Service Area</div>
+          <div class="footer-links">
+            <a href="#">Toronto</a>
+            <a href="#">Ottawa</a>
+            <a href="#">Mississauga</a>
+            <a href="#">London</a>
+            <a href="#">Province-wide</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Corporate Mailing</div>
+          <div class="footer-meta">
+            <div>794 Ouellette Ave</div>
+            <div>Windsor, ON N9A 1C2</div>
+            <div>Ontario-wide virtual service</div>
+            <a href="https://olhgroup.ca/" target="_blank" rel="noopener">Powered by OLH Property Management</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Evictly. All rights reserved.</div>
+        <div>
+          This website is intended to present Ontario-wide landlord support and tenant eviction service information.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
