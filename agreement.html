@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Management Agreement - Evictly</title>
+  
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <meta name="theme-color" content="#050505" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="icon" type="image/png" href="images/evictly-tenant-eviction-services-ontario-logo.png" />
+
+  <style>
+    /* ROOT VARIABLES */
+    :root {
+      --black: #050505;
+      --black-soft: #0b0f15;
+      --white: #ffffff;
+      --white-soft: #f7f8fb;
+      --white-card: #ffffff;
+      --text-dark: #111827;
+      --text-med: #4b5563;
+      --text-light: #b8c0cc;
+      --line-light: rgba(17, 24, 39, 0.08);
+      --line-dark: rgba(255, 255, 255, 0.10);
+      --line-dark-strong: rgba(255, 255, 255, 0.16);
+      --blue: #4f8fe6;
+      --blue-dark: #3d7bd1;
+      --blue-soft: #eef5ff;
+      --max-width: 1240px;
+      --radius: 22px;
+      --shadow-soft: 0 18px 50px rgba(17, 24, 39, 0.08);
+    }
+
+    /* RESET / GLOBAL */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--white-soft); color: var(--text-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+    .section { padding: 88px 0; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 56px; padding: 0 24px; border-radius: 999px; border: 1px solid transparent;
+      font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s ease;
+      white-space: nowrap; text-align: center;
+    }
+    .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 10px 26px rgba(79, 143, 230, 0.22); }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-secondary-dark { background: rgba(255, 255, 255, 0.04); border-color: var(--line-dark-strong); color: var(--white); }
+    .btn-secondary-dark:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.25); }
+
+    /* HEADER */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: #000000; border-bottom: 1px solid var(--line-dark);
+    }
+    .header-inner { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; flex-shrink: 0; min-width: 0; }
+    .brand img { width: auto; height: 92px; object-fit: contain; }
+    .desktop-nav { display: none; align-items: center; gap: 30px; }
+    .desktop-nav a { color: #e9eef7; font-size: 16px; font-weight: 500; transition: color 0.2s ease; }
+    .desktop-nav a:hover { color: var(--blue); }
+    .header-actions { display: none; align-items: center; gap: 14px; flex-shrink: 0; }
+    .menu-toggle {
+      appearance: none; width: 48px; height: 48px; border-radius: 14px;
+      border: 1px solid var(--line-dark-strong); background: transparent; color: var(--white);
+      font-size: 24px; display: inline-flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0;
+    }
+    .mobile-menu { display: none; padding: 0 0 18px; border-top: 1px solid var(--line-dark); }
+    .mobile-menu.open { display: block; }
+    .mobile-links { display: grid; gap: 6px; padding-top: 16px; }
+    .mobile-links a { padding: 10px 2px; color: var(--text-light); font-size: 16px; }
+    .mobile-actions { display: grid; gap: 12px; margin-top: 14px; }
+
+    /* LEGAL CONTENT CONTAINER */
+    .legal-container {
+      background: var(--white-card);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius);
+      padding: 50px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-soft);
+    }
+    .legal-container h1 { margin-top: 0; color: var(--text-dark); font-size: 32px; letter-spacing: -0.03em; }
+    .legal-container h2 { color: var(--text-dark); font-size: 24px; margin-top: 40px; margin-bottom: 15px; border-bottom: 2px solid var(--line-light); padding-bottom: 8px;}
+    .legal-container h3 { color: var(--blue-dark); font-size: 18px; margin-top: 30px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em;}
+    .legal-container p, .legal-container li { color: var(--text-med); font-size: 16px; line-height: 1.8; margin-bottom: 15px; }
+    .legal-container ul { padding-left: 20px; margin-bottom: 25px;}
+    .legal-container strong { color: var(--text-dark); }
+    
+    .clarification-box { background: #fafbfe; border-left: 4px solid var(--blue); padding: 20px; margin-bottom: 20px; border-radius: 0 8px 8px 0;}
+    .clarification-box h4 { margin: 0 0 10px; color: var(--text-dark); font-size: 18px; }
+
+    /* FOOTER */
+    .site-footer {
+      background: #000000; border-top: 1px solid var(--line-dark);
+      padding: 74px 0 30px; color: var(--white);
+    }
+    .footer-brand-logo { width: min(100%, 290px); height: auto; object-fit: contain; margin-bottom: 18px; }
+    .footer-copy { color: var(--text-light); font-size: 18px; line-height: 1.7; max-width: 440px; }
+    .footer-title { margin: 0 0 16px; font-size: 15px; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 0.08em; }
+    .footer-links, .footer-meta { display: grid; gap: 12px; }
+    .footer-links a, .footer-meta div, .footer-meta a { color: var(--text-light); font-size: 18px; line-height: 1.55; }
+    .footer-grid { display: grid; gap: 20px; }
+    .footer-bottom {
+      margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line-dark);
+      display: flex; flex-direction: column; gap: 10px; color: var(--muted-2);
+      font-size: 16px; line-height: 1.6;
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1fr; }
+    }
+    @media (min-width: 1100px) {
+      .desktop-nav, .header-actions { display: flex; }
+      .menu-toggle { display: none; }
+    }
+    @media (max-width: 1099px) {
+      .header-inner { min-height: 104px; }
+      .brand img { height: 76px; }
+    }
+    @media (max-width: 767px) {
+      .section { padding: 40px 0; }
+      .brand img { height: 56px; }
+      .legal-container { padding: 30px 20px; border-radius: 16px; }
+      .legal-container h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Evictly home">
+          <img
+            src="images/evictly-tenant-eviction-services-ontario-logo.png"
+            alt="Evictly Tenant Eviction Services Ontario logo"
+            title="Evictly Tenant Eviction Services Ontario"
+          />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#technology">Our Technology</a>
+          <a href="index.html#pricing">Compare Pricing</a>
+          <a href="index.html#coverage">Ontario Coverage</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-secondary-dark" href="index.html#book-strategy">Free Consultation</a>
+          <a class="btn btn-primary" href="index.html#start-file">Start Your File</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open mobile menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#technology">Our Technology</a>
+          <a href="index.html#pricing">Compare Pricing</a>
+          <a href="index.html#coverage">Ontario Coverage</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#book-strategy">Free Consultation</a>
+        </div>
+        <div class="mobile-actions">
+          <a class="btn btn-secondary-dark" href="index.html#book-strategy">Free Consultation</a>
+          <a class="btn btn-primary" href="index.html#start-file">Start Your File</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <div class="container">
+        
+        <div class="legal-container">
+          <h1>Property Management Legal Guarantee Agreement</h1>
+          <p style="font-weight: 700; color: var(--text-dark); margin-bottom: 30px; border-bottom: 1px solid var(--line-light); padding-bottom: 20px;">
+            Last Updated: April 2026
+          </p>
+
+          <p>
+            <strong>Between:</strong> RENT4ALL PROPERTY MANAGEMENT INC. OPERATING AS OLH PROPERTY MANAGEMENT (also referred to as “Agent”), a corporation organized under the laws of the Province of Ontario, with its principal office at 1201 Ottawa St., Windsor, ON N8X 2E5, and the Landlord (also referred to as “Owner”).
+          </p>
+          
+          <h2>Recitals</h2>
+          
+          <p><strong>Property:</strong><br>
+          The Owner holds title to the property as indicated in this agreement (referred to as “the Property”).</p>
+          
+          <p><strong>Purpose:</strong><br>
+          The Owner desires to engage the Agent to manage and operate the Property, and the Agent agrees to provide such services under the terms and conditions outlined below.</p>
+          
+          <p><strong>Signing Authority Clause:</strong><br>
+          The undersigned parties hereby represent and warrant that they have the full legal capacity and authority to execute this Agreement on behalf of the property or properties listed herein. Each signer affirms that they are duly authorized to act on behalf of the respective entity or ownership and that their agreement binds the property(ies) to the terms and conditions of this Agreement.</p>
+
+          <h2>Terms and Conditions</h2>
+
+          <h3>Section 1: Scope of Work and Services</h3>
+          <p>The Agent agrees to provide the following property management, Legal Guarantee, and Debt Reporting services:</p>
+
+          <p><strong>LandlordEzy.ca Membership (Included with Legal Guarantee)</strong><br>
+          Legal Guarantee services also include membership to LandlordEzy.ca, providing additional benefits:</p>
+          <ul>
+            <li><strong>Debt Reporting to Equifax</strong> – Reporting outstanding debts from LTB orders and judgments.</li>
+            <li><strong>LTB Order Uploading</strong> – Ability to upload Landlord and Tenant Board (LTB) Orders.</li>
+          </ul>
+
+          <p><strong>Tenant Communications:</strong></p>
+          <ul>
+            <li>Handle all tenant communications, including inquiries, complaints, and notices.</li>
+            <li>Act as the primary point of contact for tenants to address day-to-day issues related to the Property.</li>
+          </ul>
+
+          <p><strong>Rent Collection:</strong></p>
+          <ul>
+            <li>Collect rents (if any) from tenants in accordance with lease agreements.</li>
+            <li>Provide periodic reporting of collected rents and outstanding amounts to the Owner.</li>
+          </ul>
+
+          <p><strong>Tenant Relations and Conflict Resolution:</strong></p>
+          <ul>
+            <li>Address tenant disputes and mediate minor conflicts when possible to maintain a cooperative landlord-tenant relationship.</li>
+            <li>Notify the Owner promptly of disputes requiring legal or further managerial action.</li>
+          </ul>
+
+          <p><strong>Documentation and Records Management:</strong></p>
+          <ul>
+            <li>Organize and maintain tenant records, lease agreements, payment histories, and other documentation.</li>
+            <li>Assist with preparing and filing legal notices and documents as required.</li>
+          </ul>
+
+          <p><strong>Paralegal Assistance:</strong></p>
+          <ul>
+            <li>The Property Manager Paralegal will assist in handling legal paperwork, organizing case files, and coordinating with the Owner on matters that require legal attention.</li>
+          </ul>
+
+          <p><strong>Other Limited-Scope Management Services:</strong></p>
+          <ul>
+            <li>Conduct periodic property inspections (Additional fees apply) and report to the Owner any maintenance or repairs if needed.</li>
+            <li>Coordinate repairs or maintenance on behalf of the Owner.</li>
+            <li>Manage move-in and move-out processes, including the preparation of unit condition reports. Additional fees apply.</li>
+          </ul>
+
+          <h3>Section 2: Legal Guarantee</h3>
+          <ul>
+            <li>The Owner understands and agrees that OLH Property Management provides comprehensive legal coverage for all legal matters directly related to the management of the Property during the term of this agreement. This includes, but is not limited to, tenant disputes, lease enforcement, notices of termination, evictions, and legal proceedings arising from the landlord-tenant relationship.</li>
+            <li>Legal Guarantee does not cover matters unrelated to the Property or those occurring outside the contractual period unless expressly agreed upon in writing.</li>
+            <li>The Owner agrees to promptly notify the Agent of any legal issues that arise during the contract period.</li>
+          </ul>
+
+          <p><strong>Disbursements:</strong><br>
+          The Owner agrees to reimburse the Agent for expenses incurred in connection with legal matters, such as long-distance calls, postage, travel expenses, photocopying, government filings, and fees for third-party agents. These disbursements will be pre-approved by the Owner before proceeding.</p>
+
+          <p><strong>LTB Order Debt Reporting:</strong><br>
+          The Agent will report outstanding debts associated with LTB Orders/Judgments to Equifax free of charge.</p>
+
+          <h3>Section 3: Records and Tenant Documents</h3>
+          <p>The Owner agrees to provide the Agent with all relevant tenant documents and information necessary for the proper management of the Property.</p>
+
+          <h3>Section 4: Operational Structure and Legal Representation</h3>
+          <ul>
+            <li><strong>Property Management Entity:</strong> The Owner expressly acknowledges and agrees that RENT4ALL PROPERTY MANAGEMENT INC. (operating as OLH Property Management) is a property management company and is not a licensed paralegal firm or law firm.</li>
+            <li><strong>Scope of Representation:</strong> The Owner engages the Agent primarily for property management services. Any paralegal representation, Landlord and Tenant Board (LTB) filings, or legal assistance provided under this Legal Guarantee is performed strictly in the Agent’s capacity as the Property Manager for the Property, in compliance with applicable Law Society of Ontario exemptions for property managers, and utilizing in-house or affiliated licensed legal professionals. The Agent does not operate as an independent legal services provider.</li>
+          </ul>
+
+          <h3>Section 5: Owner's Maintenance Responsibilities, Indemnification & Duty to Defend</h3>
+          <ul>
+            <li><strong>Indemnification:</strong> The Owner agrees to hold harmless and completely indemnify the Agent against any and all claims, charges, debts, demands, lawsuits, or liabilities arising out of or related to the physical Property, the tenancy, or any actions taken by the Agent in good faith under this Agreement.</li>
+            <li><strong>Duty to Defend and Cover Legal Costs:</strong> In the event that the Agent is named in any lawsuit, claim, or legal proceeding initiated by a tenant, guest, or third party relating to the Property or the tenancy, the Owner agrees to assume the full legal defense of the Agent. The Owner shall provide legal representation for the Agent through the Owner's insurance provider or legal counsel at the Owner's sole expense. The Owner agrees to take all necessary steps to have the Agent fully removed and dismissed from any such lawsuits or claims, ensuring the Agent incurs no out-of-pocket costs, legal fees, or liabilities whatsoever.</li>
+            <li><strong>Physical Condition & Safety:</strong> The Owner retains full, absolute, and strict legal responsibility for the physical condition, maintenance, and safety of the Property. This includes, but is not limited to, routine and emergency inspections, structural integrity, and strict compliance with all local fire, health, and safety codes.</li>
+            <li><strong>Seasonal Maintenance:</strong> The Owner is strictly responsible for all seasonal maintenance and hazard prevention, including but not limited to snow removal, ice clearing, and salting of walkways, driveways, stairs, and common areas. The Agent assumes no liability for slips, falls, or injuries occurring on the Property.</li>
+            <li><strong>Damages and Insurance:</strong> The Agent shall not be held liable for any physical damage to the Property, including but not limited to fires, floods, vandalism, tenant-caused damage, or acts of God. The Owner agrees to maintain adequate and active comprehensive liability and property insurance at all times during the term of this Agreement, which shall explicitly cover or extend to the Agent where applicable.</li>
+          </ul>
+
+          <h3>Section 6: Plain-English Liability Acknowledgments</h3>
+          <p>By executing this agreement, the Owner expressly understands and acknowledges the real-world application of the liability clauses outlined in Section 5:</p>
+          
+          <div class="clarification-box">
+            <h4>1. Fire, Death, or Severe Injury</h4>
+            <p>If a fire breaks out and someone is hurt or killed, lawsuits almost always point to code violations (missing smoke detectors, blocked exits, faulty wiring). As outlined in the <em>Physical Condition & Safety</em> clause, the Owner holds "full, absolute, and strict legal responsibility" for fire, health, and safety codes. The Agent strictly manages paperwork and administration; the Owner is strictly responsible for the physical safety of the building.</p>
+          </div>
+          
+          <div class="clarification-box">
+            <h4>2. Slips, Falls, and Property Hazards</h4>
+            <p>If a tenant or guest slips on an icy driveway or trips over a broken step and breaks a bone. As outlined in the <em>Seasonal Maintenance</em> clause, the Agent assumes "no liability for slips, falls, or injuries." This forces the responsibility of shoveling, salting, and hazard prevention directly back onto the Owner.</p>
+          </div>
+          
+          <div class="clarification-box">
+            <h4>3. The "Any and All" Indemnification</h4>
+            <p>If someone sues the property for anything physical that happens on the grounds. The <em>Indemnification</em> clause requires the Owner to "hold harmless and completely indemnify" the Agent. If the Agent is dragged into a lawsuit over a physical injury on the property, the Owner (and their insurance) is legally obligated to cover the Agent's legal fees and any judgments. The requirement for the Owner to hold "comprehensive liability insurance" ensures a pool of insurance money is available to pay out victims, protecting the Agent's personal or business assets.</p>
+          </div>
+
+          <h3>Section 7: Additional Duties and Rights of Agent</h3>
+          <ul>
+            <li>The Agent shall perform all services necessary for the operation of the Property and holds all authority as acting agent for the Owner.</li>
+            <li>The Agent is authorized to act on behalf of the Owner to properly perform the services required under this agreement, including engaging third-party contractors or professionals.</li>
+          </ul>
+
+          <h3>Section 8: Agreement</h3>
+          <p>By checking the "I agree to the Terms of Service" box during the secure checkout process and completing a payment, I acknowledge that I have read and understood this Agreement in its entirety and agree to proceed on the basis described above.</p>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img
+            class="footer-brand-logo"
+            src="images/evictly-tenant-eviction-services-ontario-logo.png"
+            alt="Evictly Tenant Eviction Services Ontario logo"
+          />
+          <div class="footer-copy">
+            Ontario-focused landlord support website built to attract and convert
+            tenant eviction leads throughout the province.
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <div class="footer-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#coverage">Ontario Coverage</a>
+            <a href="index.html#book-strategy">Book Consultation</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Service Area</div>
+          <div class="footer-links">
+            <a href="#">Toronto</a>
+            <a href="#">Ottawa</a>
+            <a href="#">Mississauga</a>
+            <a href="#">London</a>
+            <a href="#">Province-wide</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Corporate Mailing</div>
+          <div class="footer-meta">
+            <div>794 Ouellette Ave</div>
+            <div>Windsor, ON N9A 1C2</div>
+            <div>Ontario-wide virtual service</div>
+            <a href="https://olhgroup.ca/" target="_blank" rel="noopener">Powered by OLH Property Management</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Evictly. All rights reserved.</div>
+        <div>
+          This website is intended to present Ontario-wide landlord support and tenant eviction service information.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
