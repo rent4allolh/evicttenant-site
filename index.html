@@ -1,91 +1,784 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
+  <!-- ========================================================= -->
+  <!-- PAGE META -->
+  <!-- ========================================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Evictly - Tenant Eviction Services Across Ontario | Powered by OLH</title>
-  <meta name="description" content="Professional Ontario-wide landlord support for tenant evictions, N4 notices, and L1 applications. Structured onboarding for property owners." />
+  <meta
+    name="description"
+    content="Professional Ontario-wide landlord support for tenant evictions, N4 notices, L1 applications, and structured onboarding. Powered by OLH Property Management."
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Evictly" />
   <meta name="theme-color" content="#050505" />
+  <meta name="format-detection" content="telephone=no" />
 
+  <!-- ========================================================= -->
+  <!-- CANONICAL / FAVICON -->
+  <!-- ========================================================= -->
   <link rel="canonical" href="https://evicttenant.ca/" />
   <link rel="icon" type="image/png" href="images/evictly-tenant-eviction-services-ontario-logo.png" />
 
+  <!-- ========================================================= -->
+  <!-- OPEN GRAPH -->
+  <!-- ========================================================= -->
   <meta property="og:title" content="Evictly - Tenant Eviction Services Across Ontario" />
-  <meta property="og:description" content="Structured tenant eviction and landlord support across Ontario." />
+  <meta
+    property="og:description"
+    content="Structured tenant eviction and landlord support across Ontario."
+  />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://evicttenant.ca/" />
-  <meta property="og:image" content="https://evicttenant.ca/images/ontario-tenant-eviction-consultation.png" />
+  <meta
+    property="og:image"
+    content="https://evicttenant.ca/images/ontario-tenant-eviction-consultation.png"
+  />
 
+  <!-- ========================================================= -->
+  <!-- TWITTER -->
+  <!-- ========================================================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Evictly - Tenant Eviction Services Across Ontario" />
+  <meta
+    name="twitter:description"
+    content="Structured tenant eviction and landlord support across Ontario."
+  />
+  <meta
+    name="twitter:image"
+    content="https://evicttenant.ca/images/ontario-tenant-eviction-consultation.png"
+  />
+
+  <!-- ========================================================= -->
+  <!-- STYLES -->
+  <!-- ========================================================= -->
   <style>
+    /* =======================================================
+       ROOT VARIABLES
+    ======================================================= */
     :root {
-      --bg: #050505;
-      --bg-soft: #0b0f15;
-      --card: #0d1219;
-      --card-2: #101722;
-      --line: rgba(255, 255, 255, 0.09);
-      --line-strong: rgba(255, 255, 255, 0.16);
-      --text: #ffffff;
-      --muted: #b8c0cc;
-      --muted-2: #8c95a3;
+      --black: #050505;
+      --black-soft: #0b0f15;
+      --white: #ffffff;
+      --white-soft: #f7f8fb;
+      --white-card: #ffffff;
+      --text-dark: #111827;
+      --text-med: #4b5563;
+      --text-light: #b8c0cc;
+      --line-light: rgba(17, 24, 39, 0.08);
+      --line-dark: rgba(255, 255, 255, 0.10);
+      --line-dark-strong: rgba(255, 255, 255, 0.16);
       --blue: #4f8fe6;
-      --blue-dark: #3e7fd8;
+      --blue-dark: #3d7bd1;
+      --blue-soft: #eef5ff;
       --max-width: 1240px;
       --radius: 22px;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 18px 50px rgba(17, 24, 39, 0.08);
+      --shadow-hero: 0 18px 50px rgba(0, 0, 0, 0.24);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, system-ui, sans-serif; line-height: 1.45; -webkit-font-smoothing: antialiased; }
-    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
-    .section { padding: 100px 0; }
-    .section-dark { background: var(--bg-soft); border-y: 1px solid var(--line); }
+    /* =======================================================
+       RESET / GLOBAL
+    ======================================================= */
+    * {
+      box-sizing: border-box;
+    }
 
-    /* BUTTONS */
-    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 32px; border-radius: 999px; font-weight: 800; cursor: pointer; transition: 0.2s ease; border: 1px solid transparent; }
-    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 10px 26px rgba(79, 143, 230, 0.25); }
-    .btn-primary:hover { transform: translateY(-2px); background: var(--blue-dark); }
-    .btn-secondary { background: rgba(255,255,255,0.05); border-color: var(--line-strong); color: #fff; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    /* HEADER - LOGO BUMPED TO 90PX */
-    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid var(--line); }
-    .header-inner { min-height: 120px; display: flex; align-items: center; justify-content: space-between; }
-    .brand img { height: 90px; width: auto; object-fit: contain; }
-    .desktop-nav { display: none; align-items: center; gap: 30px; }
-    .desktop-nav a { font-size: 15px; font-weight: 600; color: var(--muted); transition: 0.2s; }
-    .desktop-nav a:hover { color: var(--blue); }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-    /* HERO SECTION - REFINED IMAGE VISIBILITY */
-    .hero {
-      position: relative;
-      min-height: 85vh;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-light {
+      background: var(--white);
+    }
+
+    .section-soft {
+      background: var(--white-soft);
+      border-top: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .section-heading {
+      max-width: 920px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 14px;
+      color: var(--text-dark);
+      font-size: clamp(36px, 5.2vw, 66px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--text-med);
+      font-size: clamp(18px, 2.2vw, 21px);
+      line-height: 1.65;
+    }
+
+    /* =======================================================
+       BUTTONS
+    ======================================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 10px 26px rgba(79, 143, 230, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: rgba(17, 24, 39, 0.14);
+      color: var(--text-dark);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(17, 24, 39, 0.03);
+      border-color: rgba(17, 24, 39, 0.22);
+    }
+
+    .btn-secondary-dark {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--line-dark-strong);
+      color: var(--white);
+    }
+
+    .btn-secondary-dark:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* =======================================================
+       HEADER
+    ======================================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .header-inner {
+      min-height: 120px;
       display: flex;
       align-items: center;
-      /* Adjusted gradient: clear in middle, dark only at text-base and edges */
-      background: 
-        linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%),
-        url("images/ontario-tenant-eviction-consultation.png") center center / cover no-repeat;
+      justify-content: space-between;
+      gap: 18px;
     }
-    .hero h1 { font-size: clamp(42px, 7vw, 82px); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 20px; }
-    .hero p { max-width: 700px; font-size: clamp(18px, 2vw, 22px); color: var(--muted); margin-bottom: 35px; }
 
-    /* GRID & CARDS */
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .card { background: linear-gradient(180deg, var(--card), var(--card-2)); border: 1px solid var(--line); border-radius: var(--radius); padding: 35px; }
-    .card h3 { color: var(--blue); margin-bottom: 15px; font-size: 24px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      min-width: 0;
+    }
 
-    /* AREA CHIPS */
-    .coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 30px; }
-    .coverage-chip { background: rgba(255,255,255,0.03); border: 1px solid var(--line); padding: 12px; border-radius: 12px; text-align: center; font-weight: 700; font-size: 14px; }
+    .brand img {
+      width: auto;
+      height: 92px;
+      object-fit: contain;
+    }
 
-    /* MOBILE NAVIGATION */
-    .menu-toggle { display: block; background: none; border: 1px solid var(--line-strong); color: #fff; font-size: 24px; padding: 10px; border-radius: 12px; }
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .desktop-nav a {
+      color: #e9eef7;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--blue);
+    }
+
+    .header-actions {
+      display: none;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle {
+      appearance: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line-dark-strong);
+      background: transparent;
+      color: var(--white);
+      font-size: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 0 18px;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-links {
+      display: grid;
+      gap: 6px;
+      padding-top: 16px;
+    }
+
+    .mobile-links a {
+      padding: 10px 2px;
+      color: var(--text-light);
+      font-size: 16px;
+    }
+
+    .mobile-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    /* =======================================================
+       HERO SECTION
+    ======================================================= */
+    .hero {
+      position: relative;
+      min-height: calc(88svh - 120px);
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.56) 46%, rgba(0,0,0,0.74) 100%),
+        url("images/ontario-tenant-eviction-consultation.png") center center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(79, 143, 230, 0.14), transparent 30%),
+        radial-gradient(circle at 86% 82%, rgba(79, 143, 230, 0.08), transparent 26%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 78px 0 42px;
+    }
+
+    .hero-copy {
+      max-width: 920px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: #edf3fb;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-powered {
+      margin: 0 0 16px;
+      color: #8db9ff;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      max-width: 900px;
+      color: var(--white);
+      font-size: clamp(46px, 7.6vw, 88px);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 790px;
+      color: #dbe2ec;
+      font-size: clamp(19px, 2.3vw, 22px);
+      line-height: 1.62;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 30px;
+      max-width: 490px;
+    }
+
+    .hero-highlights {
+      display: grid;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-highlight {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 18px;
+      color: #edf3fb;
+      font-size: 17px;
+      line-height: 1.55;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-hero);
+    }
+
+    /* =======================================================
+       TRUST STRIP
+    ======================================================= */
+    .trust-strip {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .trust-item {
+      background: var(--white-card);
+      border: 1px solid var(--line-light);
+      border-radius: 18px;
+      padding: 18px 20px;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* =======================================================
+       GENERIC CARD GRIDS
+    ======================================================= */
+    .grid-3,
+    .grid-2,
+    .faq-grid,
+    .footer-grid,
+    .coverage-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white-card);
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--text-dark);
+      font-size: clamp(24px, 3vw, 27px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-med);
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    .card-accent {
+      border-top: 4px solid var(--blue);
+    }
+
+    .service-card h3 {
+      color: var(--blue-dark);
+    }
+
+    /* =======================================================
+       PROCESS STEPS
+    ======================================================= */
+    .steps {
+      display: grid;
+      gap: 22px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 24px 22px;
+      border-radius: 22px;
+      background: var(--white-card);
+      border: 1px solid var(--line-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step-num {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--blue-dark);
+      background: var(--blue-soft);
+      border: 1px solid rgba(79, 143, 230, 0.24);
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      color: var(--text-dark);
+      font-size: clamp(24px, 3vw, 27px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--text-med);
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    /* =======================================================
+       COVERAGE SECTION
+    ======================================================= */
+    .coverage-card {
+      background: var(--white-card);
+      border: 1px solid var(--line-light);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .coverage-card h3 {
+      margin: 0 0 14px;
+      color: var(--text-dark);
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .coverage-card p {
+      margin: 0 0 24px;
+      color: var(--text-med);
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    .coverage-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .coverage-chip {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 16px;
+      border: 1px solid var(--line-light);
+      background: #fafbfe;
+      color: var(--text-dark);
+      padding: 12px 14px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    /* =======================================================
+       CTA SECTION
+    ======================================================= */
+    .cta-panel {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(79,143,230,0.10), transparent 34%),
+        radial-gradient(circle at 84% 18%, rgba(79,143,230,0.06), transparent 24%),
+        var(--white-card);
+      border: 1px solid var(--line-light);
+      border-radius: 28px;
+      padding: 34px 30px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 14px;
+      max-width: 900px;
+      color: var(--text-dark);
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-panel p {
+      margin: 0 0 24px;
+      max-width: 860px;
+      color: var(--text-med);
+      font-size: 20px;
+      line-height: 1.62;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 490px;
+    }
+
+    .small-note {
+      margin-top: 16px;
+      color: var(--text-med);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    /* =======================================================
+       FOOTER
+    ======================================================= */
+    .site-footer {
+      background: #000000;
+      border-top: 1px solid var(--line-dark);
+      padding: 74px 0 30px;
+      color: var(--white);
+    }
+
+    .footer-brand-logo {
+      width: min(100%, 290px);
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 18px;
+    }
+
+    .footer-copy {
+      color: var(--text-light);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 440px;
+    }
+
+    .footer-title {
+      margin: 0 0 16px;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-links,
+    .footer-meta {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links a,
+    .footer-meta div,
+    .footer-meta a {
+      color: var(--text-light);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .footer-bottom {
+      margin-top: 36px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line-dark);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--muted-2);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* =======================================================
+       RESPONSIVE
+    ======================================================= */
+    @media (min-width: 768px) {
+      .hero-actions,
+      .cta-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .hero-highlights {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .trust-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-2,
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.35fr 1fr 1fr 1fr;
+      }
+
+      .coverage-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
     @media (min-width: 1100px) {
-      .desktop-nav { display: flex; }
-      .menu-toggle { display: none; }
+      .desktop-nav,
+      .header-actions {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1099px) {
+      .header-inner {
+        min-height: 104px;
+      }
+
+      .brand img {
+        height: 76px;
+      }
+
+      .hero {
+        min-height: calc(88svh - 104px);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .section {
+        padding: 68px 0;
+      }
+
+      .brand img {
+        height: 68px;
+      }
+
+      .hero-inner {
+        padding: 60px 0 34px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+
+      .step {
+        grid-template-columns: 64px 1fr;
+        padding: 20px 18px;
+      }
+
+      .step-num {
+        width: 58px;
+        height: 58px;
+        font-size: 28px;
+      }
+
+      .card,
+      .coverage-card,
+      .cta-panel {
+        padding: 22px 20px;
+      }
+
+      .coverage-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
+  <!-- ========================================================= -->
+  <!-- LEGALSERVICE SCHEMA -->
+  <!-- ========================================================= -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -94,6 +787,7 @@
       "url": "https://evicttenant.ca",
       "logo": "https://evicttenant.ca/images/evictly-tenant-eviction-services-ontario-logo.png",
       "image": "https://evicttenant.ca/images/ontario-tenant-eviction-consultation.png",
+      "description": "Professional Ontario-wide landlord support for tenant evictions, N4 notices, L1 applications, and structured onboarding.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "794 Ouellette Ave",
@@ -102,165 +796,516 @@
         "postalCode": "N9A 1C2",
         "addressCountry": "CA"
       },
-      "areaServed": { "@type": "AdministrativeArea", "name": "Ontario" },
-      "parentOrganization": { "@type": "Organization", "name": "OLH Property Management", "url": "https://olhgroup.ca" }
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Ontario"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "OLH Property Management",
+        "url": "https://olhgroup.ca"
+      }
+    }
+  </script>
+
+  <!-- ========================================================= -->
+  <!-- FAQ SCHEMA -->
+  <!-- ========================================================= -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you only serve Windsor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. While the office address is in Windsor, the service is positioned for landlords across Ontario."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can landlords sign up online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The goal is to make the onboarding process simple enough that landlords can move forward directly from the website."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of landlord matters do you handle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The service is positioned around tenant eviction matters, notices, applications, non-payment issues, and structured landlord support across Ontario."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the website mobile-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The layout is built mobile-first because many landlords browse and start service from their phones."
+          }
+        }
+      ]
     }
   </script>
 </head>
 <body>
 
+  <!-- ========================================================= -->
+  <!-- HEADER -->
+  <!-- ========================================================= -->
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a class="brand" href="/">
-          <img src="images/evictly-tenant-eviction-services-ontario-logo.png" alt="Evictly Logo" />
+        <a class="brand" href="#top" aria-label="Evictly home">
+          <img
+            src="images/evictly-tenant-eviction-services-ontario-logo.png"
+            alt="Evictly Tenant Eviction Services Ontario logo"
+            title="Evictly Tenant Eviction Services Ontario"
+          />
         </a>
 
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#process">Process</a>
-          <a href="#coverage">Coverage</a>
+          <a href="#coverage">Ontario Coverage</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
-          <a class="btn btn-primary" href="#start" style="min-height: 48px; padding: 0 20px;">Start Now</a>
         </nav>
 
-        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="header-actions">
+          <a class="btn btn-secondary-dark" href="#contact">Ask a Question</a>
+          <a class="btn btn-primary" href="#start">Start Now</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open mobile menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-links">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#coverage">Ontario Coverage</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="mobile-actions">
+          <a class="btn btn-secondary-dark" href="#contact">Ask a Question</a>
+          <a class="btn btn-primary" href="#start">Start Now</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
+  <!-- ========================================================= -->
+  <!-- MAIN CONTENT -->
+  <!-- ========================================================= -->
+  <main id="top">
+
+    <!-- ======================================================= -->
+    <!-- HERO SECTION -->
+    <!-- ======================================================= -->
     <section class="hero">
       <div class="container">
-        <div style="max-width: 850px;">
-          <div style="color: var(--blue); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-size: 14px;">Powered by OLH Property Management</div>
-          <h1>Recover Your Property. Professional Ontario Eviction Support.</h1>
-          <p>Expert support for landlords dealing with non-payment, LTB filings, and tenant disputes. Serving every corner of Ontario through structured digital onboarding.</p>
-          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <a class="btn btn-primary" href="#start">Start Your Online File</a>
-            <a class="btn btn-secondary" href="#process">See How It Works</a>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="hero-kicker">Ontario-Wide Landlord Support</div>
+
+            <p class="hero-powered">Powered by OLH Property Management</p>
+
+            <h1>Recover Your Property. Professional Ontario Eviction Support.</h1>
+
+            <p>
+              Expert support for landlords dealing with non-payment, notices,
+              applications, LTB-related matters, and tenant disputes. Built to be
+              structured, fast, and easy to begin online.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#start">Start Your Online File</a>
+              <a class="btn btn-secondary-dark" href="#process">See How It Works</a>
+            </div>
+
+            <div class="hero-highlights">
+              <div class="hero-highlight">
+                Ontario-wide support for landlords, not limited to one city.
+              </div>
+              <div class="hero-highlight">
+                Digital-first onboarding designed for fast intake from your phone or desktop.
+              </div>
+              <div class="hero-highlight">
+                Structured service backed by OLH Property Management.
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- ======================================================= -->
+    <!-- TRUST / INTRO SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-light">
       <div class="container">
+        <div class="section-heading">
+          <h2>Built for Ontario landlords who need a clear process</h2>
+          <p>
+            This website is designed to make the next step simple. Whether a landlord
+            reaches us through search, live chat, text, or consultation, they should
+            be able to understand the service quickly and move forward with confidence.
+          </p>
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-item">Ontario-wide service coverage</div>
+          <div class="trust-item">Mobile-first layout for phone users</div>
+          <div class="trust-item">Structured onboarding and recurring payment flow</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SERVICES SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Landlord representation services</h2>
+          <p>
+            The homepage should make it immediately clear what landlords are signing up for,
+            what types of matters are covered, and how the process moves forward.
+          </p>
+        </div>
+
         <div class="grid-3">
-          <div class="card" style="border-left: 4px solid var(--blue);">
-            <h3>Ontario-Wide</h3>
-            <p>Our virtual representation model allows us to support landlords in any Ontario municipality.</p>
+          <div class="card card-accent service-card">
+            <h3>N4 / L1 applications</h3>
+            <p>
+              Professional handling of non-payment matters, including support for notices,
+              filings, and the steps required to move the file forward properly.
+            </p>
           </div>
-          <div class="card" style="border-left: 4px solid var(--blue);">
-            <h3>Digital First</h3>
-            <p>Onboard from your phone. Upload documents, sign agreements, and track your file online.</p>
+
+          <div class="card card-accent service-card">
+            <h3>Landlord notice support</h3>
+            <p>
+              Structured support for notices and applications so landlords can avoid
+              preventable errors and start with the right process from the beginning.
+            </p>
           </div>
-          <div class="card" style="border-left: 4px solid var(--blue);">
-            <h3>Proven Results</h3>
-            <p>Backed by the operational expertise of OLH Property Management for consistent performance.</p>
+
+          <div class="card card-accent service-card">
+            <h3>Tenant dispute matters</h3>
+            <p>
+              Support for disputes, possession-related matters, and Ontario landlord
+              files that require a more organized and responsive workflow.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="services">
+    <!-- ======================================================= -->
+    <!-- PROCESS SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-light" id="process">
       <div class="container">
-        <div style="text-align: center; margin-bottom: 60px;">
-          <h2 style="font-size: clamp(32px, 5vw, 54px); margin-bottom: 20px;">Landlord Representation Services</h2>
-          <p style="color: var(--muted); max-width: 700px; margin: 0 auto;">We handle the technical complexities of the Landlord and Tenant Board so you don't have to.</p>
+        <div class="section-heading">
+          <h2>How the onboarding path works</h2>
+          <p>
+            The website should make the service feel organized, immediate,
+            and simple to understand from a mobile phone.
+          </p>
         </div>
 
-        <div class="grid-3">
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Review and sign-up</h3>
+              <p>
+                Landlords review the service, understand what is included, and begin
+                their online profile with a clear understanding of the next steps.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Intake and file details</h3>
+              <p>
+                Landlords enter the matter details, provide the basic intake information,
+                and prepare the file for structured internal review and setup.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Recurring payment setup</h3>
+              <p>
+                The selected monthly plan can be connected to Stripe so the service
+                begins through a consistent and scalable payment process.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Structured file management</h3>
+              <p>
+                Once the matter is opened, the file is organized internally and the
+                landlord has a more professional path for updates and next actions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- ONTARIO COVERAGE SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-soft" id="coverage">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Ontario-wide service hub</h2>
+          <p>
+            This brand is not being positioned as a single-city website.
+            The website should clearly state Ontario-wide service while still
+            providing a real office address for trust and legitimacy.
+          </p>
+        </div>
+
+        <div class="coverage-card">
+          <h3>Primary coverage</h3>
+          <p>
+            Evictly is positioned to support landlords throughout Ontario,
+            including major markets and surrounding regions.
+          </p>
+
+          <div class="coverage-grid">
+            <div class="coverage-chip">Toronto</div>
+            <div class="coverage-chip">Ottawa</div>
+            <div class="coverage-chip">Mississauga</div>
+            <div class="coverage-chip">Brampton</div>
+            <div class="coverage-chip">Hamilton</div>
+            <div class="coverage-chip">London</div>
+            <div class="coverage-chip">Windsor</div>
+            <div class="coverage-chip">Kitchener</div>
+            <div class="coverage-chip">Barrie</div>
+            <div class="coverage-chip">Niagara</div>
+            <div class="coverage-chip">Guelph</div>
+            <div class="coverage-chip">Ontario-wide</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- CALL TO ACTION SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-light" id="start">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Ready to begin your file online?</h2>
+          <p>
+            This section can be connected directly to your Stripe sign-up flow,
+            intake form, or onboarding page. It should be the main action point
+            for landlords who already know they want to move forward.
+          </p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#">Begin Your File Online</a>
+            <a class="btn btn-secondary" href="#contact">Ask a Question First</a>
+          </div>
+
+          <div class="small-note">
+            Service details, payment flow, and onboarding language can be expanded
+            once the full sign-up system is ready.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- FAQ SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-soft" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently asked questions</h2>
+          <p>
+            These questions help with both SEO and landlord conversion.
+            They also help clarify Ontario-wide positioning.
+          </p>
+        </div>
+
+        <div class="faq-grid">
           <div class="card">
-            <h3>N4/L1 Applications</h3>
-            <p>Professional handling of non-payment of rent matters, ensuring notices are served correctly the first time.</p>
+            <h3>Do you only serve Windsor?</h3>
+            <p>
+              No. The office address is in Windsor, but the service is positioned
+              for landlords across Ontario.
+            </p>
           </div>
+
           <div class="card">
-            <h3>N12 / Personal Use</h3>
-            <p>Strategic support for landlords recovering units for personal or family use under the strict RTA guidelines.</p>
+            <h3>Can landlords sign up online?</h3>
+            <p>
+              Yes. The goal is to make the onboarding process simple enough
+              that landlords can move forward directly from the website.
+            </p>
           </div>
+
           <div class="card">
-            <h3>Conduct Disputes</h3>
-            <p>Assistance with N5, N6, and N7 matters involving illegal acts, damages, or interference with enjoyment.</p>
+            <h3>What types of matters are included?</h3>
+            <p>
+              The site is currently positioned around tenant eviction matters,
+              notices, applications, non-payment issues, and structured landlord support.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Is the website mobile-friendly?</h3>
+            <p>
+              Yes. The layout is built mobile-first because many landlords browse
+              and begin service from their phones.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="process">
+    <!-- ======================================================= -->
+    <!-- CONTACT / OFFICE SECTION -->
+    <!-- ======================================================= -->
+    <section class="section section-light" id="contact">
       <div class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">The Onboarding Path</h2>
-        <div class="grid-3" style="text-align: center;">
-          <div>
-            <div style="background: var(--blue); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 900; font-size: 24px;">1</div>
-            <h4>Review & Sign-up</h4>
-            <p style="font-size: 14px; color: var(--muted);">Review our service levels and start your digital profile online.</p>
+        <div class="section-heading">
+          <h2>Contact and office details</h2>
+          <p>
+            The address helps establish legitimacy, while the service area messaging
+            makes it clear the website is built for Ontario-wide landlord traffic.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Office location</h3>
+            <p>
+              794 Ouellette Ave<br />
+              Windsor, ON N9A 1C2
+            </p>
           </div>
-          <div>
-            <div style="background: var(--blue); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 900; font-size: 24px;">2</div>
-            <h4>Intake & Payment</h4>
-            <p style="font-size: 14px; color: var(--muted);">Enter tenant details and set up your recurring Stripe payment flow.</p>
-          </div>
-          <div>
-            <div style="background: var(--blue); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 900; font-size: 24px;">3</div>
-            <h4>Active File Mgmt</h4>
-            <p style="font-size: 14px; color: var(--muted);">Receive updates as we serve notices and file LTB applications.</p>
+
+          <div class="card">
+            <h3>Brand structure</h3>
+            <p>
+              Evictly is the front-facing eviction brand. The service is powered by
+              OLH Property Management and positioned to support landlords throughout Ontario.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="coverage">
-      <div class="container">
-        <h2 style="text-align: center;">Ontario-Wide Service Hub</h2>
-        <div class="coverage-grid">
-          <div class="coverage-chip">Toronto</div>
-          <div class="coverage-chip">Ottawa</div>
-          <div class="coverage-chip">Mississauga</div>
-          <div class="coverage-chip">Brampton</div>
-          <div class="coverage-chip">Hamilton</div>
-          <div class="coverage-chip">London</div>
-          <div class="coverage-chip">Windsor</div>
-          <div class="coverage-chip">Kitchener</div>
-          <div class="coverage-chip">Barrie</div>
-          <div class="coverage-chip">Niagara</div>
-          <div class="coverage-chip">Guelph</div>
-          <div class="coverage-chip">Sarnia</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="card" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: var(--bg-soft);">
-          <div style="flex: 1; min-width: 300px;">
-            <h2>Contact Details</h2>
-            <p style="margin: 20px 0;">Our head office is in Windsor, but we are a province-wide digital brand.</p>
-            <p><strong>Address:</strong> 794 Ouellette Ave, Windsor, ON N9A 1C2</p>
-            <p><strong>Powered by:</strong> OLH Property Management</p>
-          </div>
-          <div style="flex: 1; min-width: 300px; text-align: center;">
-            <a class="btn btn-primary" href="#start" style="width: 100%;">Begin Your File Online</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer" style="padding: 60px 0 20px; border-top: 1px solid var(--line); background: #000;">
+  <!-- ========================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================= -->
+  <footer class="site-footer">
     <div class="container">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
-        <div style="max-width: 300px;">
-          <img src="images/evictly-tenant-eviction-services-ontario-logo.png" style="height: 60px; margin-bottom: 20px;" alt="Evictly">
-          <p style="font-size: 14px; color: var(--muted);">The premier brand for Ontario landlord support. evicttenant.ca</p>
+      <div class="footer-grid">
+        <div>
+          <img
+            class="footer-brand-logo"
+            src="images/evictly-tenant-eviction-services-ontario-logo.png"
+            alt="Evictly Tenant Eviction Services Ontario logo"
+          />
+          <div class="footer-copy">
+            Ontario-focused landlord support website built to attract and convert
+            tenant eviction leads throughout the province.
+          </div>
         </div>
-        <div style="font-size: 14px; color: var(--muted-2);">
-          &copy; 2026 Evictly. All Rights Reserved. | 794 Ouellette Ave, Windsor, ON.
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#coverage">Ontario Coverage</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Service Area</div>
+          <div class="footer-links">
+            <a href="#">Toronto</a>
+            <a href="#">Ottawa</a>
+            <a href="#">Mississauga</a>
+            <a href="#">London</a>
+            <a href="#">Windsor</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Office</div>
+          <div class="footer-meta">
+            <div>794 Ouellette Ave</div>
+            <div>Windsor, ON N9A 1C2</div>
+            <div>Ontario-wide service</div>
+            <a href="https://olhgroup.ca/" target="_blank" rel="noopener">Powered by OLH Property Management</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Evictly. All rights reserved.</div>
+        <div>
+          This website is intended to present Ontario-wide landlord support and tenant eviction service information.
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- ========================================================= -->
+  <!-- MOBILE MENU SCRIPT -->
+  <!-- ========================================================= -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
 </body>
 </html>
