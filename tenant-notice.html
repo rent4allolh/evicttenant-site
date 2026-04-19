@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Tenant Outreach & Education | Evictly Shield Ontario</title>
+  
+  <meta name="description" content="Landlords: Review the professional Evictly Shield introduction letter and the educational resolution steps provided to tenants to ensure compliance." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://evictly.ca/tenant-letter-sample.html" />
+  <link rel="icon" type="image/png" href="images/evictly-tenant-eviction-services-ontario-logo.png" />
+
+  <style>
+    :root {
+      --black: #050505;
+      --white: #ffffff;
+      --white-soft: #f7f8fb;
+      --text-dark: #111827;
+      --text-med: #4b5563;
+      --text-light: #b8c0cc;
+      --blue: #4f8fe6;
+      --blue-dark: #3d7bd1;
+      --line-light: rgba(17, 24, 39, 0.08);
+      --line-dark: rgba(255, 255, 255, 0.10);
+      --max-width: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--white-soft); color: var(--text-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.45; -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(100% - 32px, var(--max-width)); margin: 0 auto; }
+
+    /* HEADER (EXACT SYNC) */
+    .site-header { position: sticky; top: 0; z-index: 1000; background: #000; border-bottom: 1px solid var(--line-dark); }
+    .header-inner { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand img { height: 92px; width: auto; object-fit: contain; }
+    .desktop-nav { display: none; align-items: center; gap: 30px; }
+    .desktop-nav a { color: #e9eef7; font-size: 16px; font-weight: 500; transition: color 0.2s ease; }
+    .desktop-nav a:hover { color: var(--blue); }
+    .header-actions { display: none; align-items: center; gap: 14px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 24px; border-radius: 999px; font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s ease; }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-secondary-dark { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.16); color: var(--white); }
+
+    /* PAGE INTRO */
+    .page-intro { padding: 80px 0 40px; text-align: center; }
+    .page-intro h1 { font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.04em; margin-bottom: 15px; }
+    .page-intro p { font-size: 20px; color: var(--text-med); max-width: 800px; margin: 0 auto; }
+
+    /* THE LETTER (PAPER STYLE) */
+    .letter-paper {
+      max-width: 850px; margin: 0 auto 60px; background: #fff;
+      padding: 60px 80px; border-radius: 4px; border: 1px solid #ddd;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08); position: relative; z-index: 10;
+    }
+    .letter-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--blue); padding-bottom: 25px; margin-bottom: 45px; }
+    .letter-logo img { height: 75px; width: auto; } /* Using the JPG logo */
+    .letter-meta { text-align: right; font-size: 13px; color: var(--text-med); line-height: 1.4; }
+
+    .letter-body { font-family: "Times New Roman", Times, serif; font-size: 17px; color: #333; line-height: 1.6; }
+    .letter-body p { margin-bottom: 20px; }
+    .letter-body .subject { font-weight: bold; text-decoration: underline; text-transform: uppercase; margin-bottom: 35px; display: block; }
+    .letter-watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 110px; color: rgba(0,0,0,0.02); font-weight: 900; pointer-events: none; }
+
+    /* EDUCATION SECTION (FOR BRANDING/DEMO) */
+    .education-section { max-width: 850px; margin: 0 auto 80px; background: var(--white); padding: 50px 80px; border-radius: 20px; border: 1px solid var(--line-light); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+    .education-intro { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--line-light); }
+    .education-intro h3 { color: var(--text-dark); font-size: 24px; margin: 0 0 10px; }
+    .education-intro p { color: var(--text-med); font-size: 16px; margin: 0; }
+    
+    .education-heading h2 { font-size: 28px; color: var(--blue-dark); margin: 0 0 10px; }
+    .education-heading p { color: var(--text-med); font-size: 17px; margin: 0 0 30px; }
+    
+    .notice-alert { background: #f4f8ff; border-left: 5px solid var(--blue); padding: 25px; border-radius: 0 12px 12px 0; margin: 30px 0; }
+    .notice-alert h4 { margin: 0 0 10px; color: var(--blue-dark); font-size: 18px; }
+    .notice-alert p { margin: 0; color: var(--text-dark); font-size: 16px; }
+
+    .steps { list-style: none; padding: 0; margin: 30px 0 0; }
+    .steps li { background: var(--white-soft); padding: 20px; border-radius: 12px; margin-bottom: 12px; display: flex; gap: 15px; font-weight: 600; align-items: center; color: var(--text-dark); }
+    .steps span { background: var(--blue); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* FOOTER (EXACT SYNC) */
+    .site-footer { background: #000; border-top: 1px solid var(--line-dark); padding: 74px 0 30px; color: var(--white); }
+    .footer-grid { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .footer-title { margin-bottom: 16px; font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; }
+    .footer-links a, .footer-meta div { color: var(--text-light); font-size: 18px; margin-bottom: 10px; display: block; }
+    .footer-bottom { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line-dark); color: var(--text-light); font-size: 16px; }
+
+    @media (min-width: 1100px) { .desktop-nav, .header-actions { display: flex; } }
+    @media (max-width: 767px) {
+      .letter-paper, .education-section { padding: 40px 25px; margin: 0 10px 40px; }
+      .letter-header { flex-direction: column; gap: 20px; }
+      .letter-meta { text-align: left; }
+      .steps li { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <img src="images/evictly-tenant-eviction-services-ontario-logo.png" alt="Evictly logo">
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#technology">Our Technology</a>
+          <a href="index.html#pricing">Compare Pricing</a>
+          <a href="index.html#power-session">Power Session</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn-secondary-dark" href="index.html#book-strategy">Free Consultation</a>
+          <a class="btn btn-primary" href="index.html#start-file">Start Your File</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-intro">
+    <div class="container">
+      <h1>Evictly Shield Communication System</h1>
+      <p>Review the professional <strong>Notice of Enrollment</strong> and educational resources provided to your tenants. This system is designed to encourage on-time payments through credit reporting while establishing a professional management boundary.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="letter-paper">
+      <div class="letter-watermark">SAMPLE</div>
+      
+      <div class="letter-header">
+        <div class="letter-logo">
+          <img src="images/Evictly-Paralegal-Evictions-Services-Ontario.jpg" alt="Evictly Shield Ontario">
+        </div>
+        <div class="letter-meta">
+          <strong>Evictly Operations Centre</strong><br>
+          Ontario Tenant Monitoring Division<br>
+          In Collaboration with LandlordEzy.ca<br>
+          Serving All Ontario Regions
+        </div>
+      </div>
+
+      <div class="letter-body">
+        <p>Date: [Current Date]</p>
+        
+        <p><strong>TO THE TENANTS AT:</strong><br>
+        [PROPERTY ADDRESS]</p>
+
+        <span class="subject">NOTICE OF ENROLLMENT: EVICTLY SHIELD MONITORING SYSTEM</span>
+
+        <p>We are pleased to inform you that your Landlord has enrolled your property in the <strong>Evictly Shield</strong> program. Evictly is an Ontario-wide management representative firm that works collaboratively with <strong>LandlordEzy.ca</strong> to monitor rental payment performance and administrative compliance.</p>
+
+        <p><strong>HOW THIS BENEFITS YOU:</strong><br>
+        As part of this program, your on-time rent payments are now reported monthly to <strong>Equifax</strong>. This is a significant benefit designed to help you build a strong credit history simply by paying your rent on time. Good standing in this system will positively impact your credit score and your future rental applications.</p>
+
+        <p><strong>LATE PAYMENTS & ENFORCEMENT:</strong><br>
+        If your rent is paid in full and on time, no further action is required and your file will reflect perfect standing. However, please be advised that should a rent payment be missed, the Evictly Shield converts into an active enforcement matter. Late payments are reported to Equifax and will be visible to future landlords during screening processes via the LandlordEzy network.</p>
+
+        <p>In the event of non-payment, formal LTB notices will be issued and our full legal enforcement packages will commence on behalf of the landlord. We encourage you to maintain your current good standing to ensure your credit remains protected.</p>
+
+        <p>Yours Truly,</p>
+        <p><strong>Evictly Shield Administration</strong><br>
+        Ontario Division</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="education-section">
+      <div class="education-intro">
+        <h3>Tenant De-escalation & Next Steps</h3>
+        <p><em>Along with the formal notice, tenants are provided with the following educational content to clarify the process and encourage voluntary compliance.</em></p>
+      </div>
+
+      <div class="education-heading">
+        <h2>What is Evictly Shield?</h2>
+        <p>
+          It is a preventative rent monitoring system. We believe that professional tenants deserve to have their on-time payments count toward their financial future. By reporting to <strong>Equifax</strong> through the <strong>LandlordEzy</strong> network, we ensure your reliability is documented.
+        </p>
+      </div>
+
+      <div class="notice-alert">
+        <h4>Avoid the Transition to Enforcement</h4>
+        <p>
+          The "Shield" is a protective layer. If you fall behind, the shield is removed and active legal enforcement begins. An LTB eviction order is a public record that can stay with you for years, making it difficult to secure quality housing in the future.
+        </p>
+      </div>
+
+      <div class="education-heading" style="margin-top: 40px;">
+        <h2>How to Maintain Good Standing</h2>
+        <ul class="steps">
+          <li><span>1</span> <strong>Pay on Time:</strong> Ensure your rent reaches your landlord on or before the 1st of the month.</li>
+          <li><span>2</span> <strong>Watch Your Credit:</strong> Monitor your Equifax report to see your positive rent history grow.</li>
+          <li><span>3</span> <strong>Communicate:</strong> If you expect a delay, contact your management team immediately before the file is escalated.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 80px;">
+      <a href="index.html" class="btn btn-secondary-dark" style="color: var(--text-dark); border-color: var(--line-light);">← Return to Evictly Homepage</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-brand-logo" src="images/evictly-tenant-eviction-services-ontario-logo.png" alt="Evictly logo" style="height: 60px; margin-bottom: 20px;">
+          <div style="color: var(--text-light); max-width: 300px;">Ontario's professional hub for landlord support and tenant management.</div>
+        </div>
+        <div>
+          <div class="footer-title">Navigation</div>
+          <div class="footer-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#faq">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Support</div>
+          <div class="footer-links">
+            <a href="https://olhgroup.ca/">Powered by OLH</a>
+            <a href="index.html#book-strategy">Book Consultation</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Operations</div>
+          <div class="footer-meta">
+            <div>Provincial Hub: Ontario</div>
+            <div>Credit Reporting: LandlordEzy.ca</div>
+            <div>Virtual Representation Province-Wide</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Evictly. All rights reserved. Professional Rent Monitoring & Tenant Management across Ontario.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -138,10 +138,11 @@
     }
     .hero-inner { position: relative; z-index: 2; width: 100%; padding: 78px 0 42px; }
     .hero-copy { max-width: 920px; }
+    .hero-kicker-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .hero-kicker {
       display: inline-flex; align-items: center; min-height: 46px; padding: 0 18px; border-radius: 999px;
       border: 1px solid rgba(79, 143, 230, 0.5); background: rgba(79, 143, 230, 0.1); color: #edf3fb;
-      font-size: 15px; font-weight: 700; margin-bottom: 18px;
+      font-size: 15px; font-weight: 700; margin-bottom: 0;
     }
     .hero-powered { margin: 0 0 16px; color: #8db9ff; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; }
     .hero h1 { margin: 0 0 18px; max-width: 900px; color: var(--white); font-size: clamp(40px, 6.5vw, 76px); line-height: 0.94; letter-spacing: -0.04em; text-wrap: balance; }
@@ -224,7 +225,6 @@
     .pricing-header h3 { font-size: 36px; color: var(--blue-dark); margin: 0 0 15px 0; letter-spacing: -0.04em;}
     .pricing-header p { font-size: 18px; color: var(--text-med); margin: 0; max-width: 800px; margin: 0 auto; line-height: 1.65;}
     
-    /* ALERT BOX FOR HOURLY WARNING */
     .alert-box { background: #fff4f4; border-left: 5px solid #ef4444; padding: 25px 30px; border-radius: 0 16px 16px 0; margin-bottom: 40px; text-align: left; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.08); }
     .alert-box h4 { margin: 0 0 12px; color: #b91c1c; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
     .alert-box p { margin: 0 0 14px; color: #111827; font-size: 16px; line-height: 1.65; }
@@ -245,7 +245,8 @@
     .calc-card .price { font-size: 36px; font-weight: 900; color: var(--text-dark); line-height: 1; }
     .calc-card .subtext { font-size: 13px; color: var(--text-med); margin-top: 8px; line-height: 1.5; }
 
-    .pricing-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;}
+    /* LEGAL GUARANTEE PRICING (3 COLUMNS) */
+    .pricing-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;}
     .price-box { background: var(--white-soft); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 34px 24px; text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between;}
     .price-box.featured { border: 2px solid var(--blue); background: var(--white); box-shadow: 0 10px 30px rgba(79, 143, 230, 0.15);}
     .price-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--blue); color: white; padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;}
@@ -254,6 +255,31 @@
     .pricing-features h4 { margin: 0 0 20px 0; font-size: 18px; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.05em; }
     .pricing-list { margin: 0; padding-left: 20px; color: var(--text-med); font-size: 17px; line-height: 1.8; }
     .pricing-list li { margin-bottom: 10px; }
+
+    /* =======================================================
+       EVICTLY SHIELD SECTION (NEW)
+    ======================================================= */
+    .shield-section { background: var(--white); border-top: 1px solid var(--line-light); padding: 80px 0; border-bottom: 1px solid var(--line-light); }
+    .shield-grid { display: grid; gap: 40px; align-items: stretch; }
+    
+    .shield-content h2 { font-size: clamp(32px, 4vw, 46px); color: var(--blue-dark); margin: 0 0 15px; letter-spacing: -0.03em; line-height: 1.1; }
+    .shield-content .lead { font-size: 20px; color: var(--text-dark); font-weight: 600; margin-bottom: 25px; line-height: 1.5; }
+    .shield-content .eligibility { background: #fffcf0; border-left: 4px solid #f59e0b; padding: 15px 20px; border-radius: 0 12px 12px 0; margin-bottom: 25px; font-size: 15px; color: #92400e; }
+    
+    .shield-features { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 12px; }
+    .shield-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: var(--text-med); line-height: 1.5;}
+    .shield-features li::before { content: '✓'; color: var(--blue); font-weight: 900; font-size: 18px; margin-top: -2px;}
+    
+    .shield-upgrade { background: var(--white-soft); padding: 20px; border-radius: 16px; border: 1px solid var(--line-light); font-size: 15px; color: var(--text-dark); line-height: 1.5; }
+    
+    .shield-card { background: var(--white-card); border: 2px solid var(--blue); border-radius: 28px; padding: 40px 30px; text-align: center; box-shadow: 0 20px 40px rgba(79, 143, 230, 0.12); display: flex; flex-direction: column; justify-content: center; }
+    .shield-card img { width: 60px; height: auto; margin: 0 auto 20px; }
+    .shield-card h3 { margin: 0 0 10px; font-size: 28px; color: var(--text-dark); }
+    .shield-card .price { font-size: 52px; font-weight: 900; color: var(--text-dark); line-height: 1; margin-bottom: 5px; }
+    .shield-card .price span { font-size: 18px; color: var(--text-med); font-weight: 600; }
+    
+    .sample-letter-banner { text-align: center; margin-top: 40px; padding: 30px; background: #f4f8ff; border-radius: 20px; border: 1px dashed var(--blue); }
+    .sample-letter-banner h4 { margin: 0 0 10px; color: var(--blue-dark); font-size: 20px; }
 
     /* =======================================================
        CTA / HUBSPOT EMBED
@@ -301,11 +327,15 @@
       .grid-2, .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1fr; }
       .coverage-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .shield-features { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 992px) {
+      .shield-grid { grid-template-columns: 1fr 380px; }
     }
     @media (min-width: 1100px) {
       .desktop-nav, .header-actions { display: flex; }
       .menu-toggle { display: none; }
-      .pricing-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .pricing-options { grid-template-columns: repeat(3, minmax(0, 1fr)); } /* Kept 3 columns for Legal Guarantee */
     }
     @media (max-width: 1099px) {
       .header-inner { min-height: 104px; }
@@ -326,6 +356,7 @@
       .pricing-container { padding: 25px 20px;}
       .pricing-features { padding: 20px;}
       .alert-box { padding: 20px; border-radius: 12px; border-left-width: 4px; }
+      .shield-card { padding: 30px 20px; }
     }
   </style>
 
@@ -461,7 +492,10 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-copy">
-            <div class="hero-kicker">Ontario's First Subscription-Based Eviction Service</div>
+            <div class="hero-kicker-wrap">
+              <img src="images/Evictly-sheild-property-management-landlord-protection.png" alt="Evictly Guard Shield" style="width: 38px; height: auto;">
+              <div class="hero-kicker" style="margin-bottom: 0;">Ontario's First Subscription-Based Eviction Service</div>
+            </div>
             <p class="hero-powered">Powered by OLH Property Management</p>
             <h1>Recover Your Property. Save Thousands on Legal Fees.</h1>
             <p>
@@ -656,10 +690,10 @@
           <div class="section-heading" style="text-align: center; margin: 0 auto 40px;">
             <h2 style="color: var(--blue-dark);">The Legal Guarantee Subscription</h2>
             <p style="max-width: 800px; margin: 0 auto; color: var(--text-dark); font-weight: 600;">
-              Right now, we are consistently securing LTB eviction orders within 3 to 4 months.
+              For landlords currently dealing with non-payment or active tenant disputes.
             </p>
             <p style="max-width: 800px; margin: 10px auto 0;">
-              Hundreds of landlords across Ontario are utilizing our subscription model to save thousands of dollars. Compare our cash-flow-friendly plans against traditional upfront legal fees below.
+              We are consistently securing LTB eviction orders within 3 to 4 months. Hundreds of landlords across Ontario are utilizing our subscription model to save thousands of dollars compared to traditional upfront legal fees.
             </p>
           </div>
 
@@ -768,29 +802,75 @@
       </div>
     </section>
 
+    <section class="shield-section" id="evictly-shield">
+      <div class="container">
+        <div class="shield-grid">
+          
+          <div class="shield-content">
+            <img src="images/Evictly-sheild-property-management-landlord-protection.png" alt="Evictly Shield Protection" style="width: 50px; height: auto; margin-bottom: 15px;">
+            <h2>Evictly Shield: Preventative Protection</h2>
+            <div class="lead">A rent monitoring and enforcement-readiness package for landlords who want peace of mind without full property management.</div>
+            
+            <div class="eligibility">
+              <strong>Eligibility:</strong> This service is strictly for properties with tenants currently in good standing. If your tenant is already behind on rent or an N4 has been issued, you must enroll in a Legal Guarantee plan above.
+            </div>
+
+            <ul class="shield-features">
+              <li>Rent collection monitoring and missed payment alerts.</li>
+              <li>Automatic reporting of positive and negative rent payments to Equifax via LandlordEzy.</li>
+              <li>Immediate N4 Notice preparation if rent is missed.</li>
+              <li>24/7 Access to your dedicated Buildium landlord portal.</li>
+              <li>Monthly income reporting and yearly tax summaries.</li>
+            </ul>
+
+            <div class="shield-upgrade">
+              <strong>Seamless Flexibility:</strong> If a tenant misses rent, the Evictly Shield easily upgrades into a Legal Guarantee plan so our paralegal team can immediately file with the LTB. Conversely, once an eviction is complete and a new reliable tenant is placed, you can downgrade back to the Shield for affordable, ongoing monitoring.
+            </div>
+          </div>
+
+          <div>
+            <div class="shield-card">
+              <h3>Evictly Shield</h3>
+              <div class="price">$79<span>/mo</span></div>
+              <p style="color: var(--text-med); font-size: 15px; margin-bottom: 25px;">Preventative rent monitoring.</p>
+              <a href="https://buy.stripe.com/3cI4gA2BFasf7Gt8f1afS09" class="btn btn-primary" target="_blank">Activate The Shield</a>
+              <p style="font-size: 12px; color: var(--text-med); margin-top: 15px;">$158 First & Last Month required today.</p>
+            </div>
+
+            <div class="sample-letter-banner">
+              <h4>See the strategy in action.</h4>
+              <p style="color: var(--text-med); font-size: 15px; margin-bottom: 15px;">Review the professional Notice of Enrollment and the educational credit-building resources we send to your tenants when you activate the Shield.</p>
+              <a href="tenant-notice.html" class="btn btn-secondary-dark" style="color: var(--blue-dark); border-color: var(--blue-dark); width: 100%;">View Sample Outreach Letter</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <section class="section section-light" id="power-session">
-  <div class="container">
-    <div class="tech-box" style="margin-top: 0;">
-      <div class="tech-content">
-        <h2 style="color: var(--blue-dark); font-size: clamp(32px, 4vw, 42px); margin-top: 0; margin-bottom: 15px; letter-spacing: -0.03em;">The Eviction Power Session: 1-on-1 Paralegal Support</h2>
-        <div style="font-size: 24px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">60 Minutes. You Set The Agenda. <span style="color: var(--blue);">$249 Flat Fee.</span></div>
-        <p>Not ready for full representation but need immediate, professional help? Book a dedicated 1-on-1 working session. This is a highly educational, hands-on tutorial where a licensed Ontario paralegal will do absolutely anything you need regarding your tenancy matter within one hour. No hourly billing surprises.</p>
-        <ul class="tech-list" style="margin-bottom: 30px;">
-          <li><strong>Learn How to do an N4:</strong> Get a step-by-step tutorial on drafting an N4 for nonpayment of rent so your notice is flawless and avoids dismissal at the Landlord and Tenant Board.</li>
-          <li><strong>Master the N5 & N12:</strong> Want to know exactly how to do an N5 for behavioral issues or an N12 for purchaser's use? We will go through the forms together so you understand the exact legal requirements.</li>
-          <li><strong>Live Document Drafting:</strong> We will fill out your notices live on the screen with you. You drive the agenda, and we provide the legal execution.</li>
-          <li><strong>Custom Strategy & Education:</strong> Complete 1-on-1 educational support. Ask questions, review your rent ledger, learn LTB procedures, and get a tailored eviction strategy.</li>
-        </ul>
-        <a href="https://buy.stripe.com/8x24gA9037g32m9cvhafS07" class="btn btn-primary" target="_blank">Book Your Power Session Now</a>
-      </div>
+      <div class="container">
+        <div class="tech-box" style="margin-top: 0;">
+          <div class="tech-content">
+            <h2 style="color: var(--blue-dark); font-size: clamp(32px, 4vw, 42px); margin-top: 0; margin-bottom: 15px; letter-spacing: -0.03em;">The Eviction Power Session: 1-on-1 Paralegal Support</h2>
+            <div style="font-size: 24px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">60 Minutes. You Set The Agenda. <span style="color: var(--blue);">$249 Flat Fee.</span></div>
+            <p>Not ready for full representation but need immediate, professional help? Book a dedicated 1-on-1 working session. This is a highly educational, hands-on tutorial where a licensed Ontario paralegal will do absolutely anything you need regarding your tenancy matter within one hour. No hourly billing surprises.</p>
+            <ul class="tech-list" style="margin-bottom: 30px;">
+              <li><strong>Learn How to do an N4:</strong> Get a step-by-step tutorial on drafting an N4 for nonpayment of rent so your notice is flawless and avoids dismissal at the Landlord and Tenant Board.</li>
+              <li><strong>Master the N5 & N12:</strong> Want to know exactly how to do an N5 for behavioral issues or an N12 for purchaser's use? We will go through the forms together so you understand the exact legal requirements.</li>
+              <li><strong>Live Document Drafting:</strong> We will fill out your notices live on the screen with you. You drive the agenda, and we provide the legal execution.</li>
+              <li><strong>Custom Strategy & Education:</strong> Complete 1-on-1 educational support. Ask questions, review your rent ledger, learn LTB procedures, and get a tailored eviction strategy.</li>
+            </ul>
+            <a href="https://buy.stripe.com/8x24gA9037g32m9cvhafS07" class="btn btn-primary" target="_blank">Book Your Power Session Now</a>
+          </div>
 
-      <div style="flex: 1; max-width: 500px; width: 100%;">
-        <img src="images/ontario-tenant-eviction-paralegal-video-call-n4-form-landlord-consultation.png" alt="1-on-1 virtual paralegal support, LTB form N4 tutorial and landlord consultation Ontario" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(17, 24, 39, 0.1); object-fit: cover; aspect-ratio: 4/3;" />
-      </div>
+          <div style="flex: 1; max-width: 500px; width: 100%;">
+            <img src="images/ontario-tenant-eviction-paralegal-video-call-n4-form-landlord-consultation.png" alt="1-on-1 virtual paralegal support, LTB form N4 tutorial and landlord consultation Ontario" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(17, 24, 39, 0.1); object-fit: cover; aspect-ratio: 4/3;" />
+          </div>
 
-    </div>
-  </div>
-</section>
+        </div>
+      </div>
+    </section>
 
     <section class="section section-soft" id="start-file">
       <div class="container">
@@ -963,4 +1043,3 @@
   </script>
 </body>
 </html>
-```
