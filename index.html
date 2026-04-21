@@ -245,9 +245,9 @@
     .calc-card .price { font-size: 36px; font-weight: 900; color: var(--text-dark); line-height: 1; }
     .calc-card .subtext { font-size: 13px; color: var(--text-med); margin-top: 8px; line-height: 1.5; }
 
-    /* LEGAL GUARANTEE PRICING (3 COLUMNS) */
-    .pricing-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;}
-    .price-box { background: var(--white-soft); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 34px 24px; text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between;}
+    /* LEGAL GUARANTEE PRICING */
+    .pricing-options { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;}
+    .price-box { background: var(--white-soft); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 34px 24px; text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 100%; max-width: 400px;}
     .price-box.featured { border: 2px solid var(--blue); background: var(--white); box-shadow: 0 10px 30px rgba(79, 143, 230, 0.15);}
     .price-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--blue); color: white; padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;}
     
@@ -335,7 +335,6 @@
     @media (min-width: 1100px) {
       .desktop-nav, .header-actions { display: flex; }
       .menu-toggle { display: none; }
-      .pricing-options { grid-template-columns: repeat(3, minmax(0, 1fr)); } /* Kept 3 columns for Legal Guarantee */
     }
     @media (max-width: 1099px) {
       .header-inner { min-height: 104px; }
@@ -724,11 +723,6 @@
                 <div class="price" style="color: #ef4444;">$2,500<span style="font-size: 20px;">+</span></div>
                 <div class="subtext">Heavy upfront cost. Usually solo operators without tech portals or teams.</div>
               </div>
-              <div class="calc-card highlight">
-                <div class="title">Evictly Month-to-Month</div>
-                <div class="price" id="calcMonthly" style="color: var(--blue);">$996</div>
-                <div class="subtext">Based on $249/mo (4-mo min). Highest flexibility.</div>
-              </div>
               <div class="calc-card highlight-dark">
                 <div class="title">Evictly 12-Month Plan</div>
                 <div class="price" id="calcAnnual" style="color: var(--blue-dark);">$796</div>
@@ -738,19 +732,6 @@
           </div>
 
           <div class="pricing-options">
-            
-            <div class="price-box">
-              <div>
-                <h4 style="font-size: 20px; margin: 0 0 10px; color: var(--text-dark);">Legal Guarantee Month-to-Month</h4>
-                <div style="font-size: 42px; font-weight: 900; line-height: 1; margin-bottom: 5px; color: var(--text-dark);">$249<span style="font-size: 16px;">/mo</span></div>
-                <div style="font-size: 13px; color: var(--text-med); margin-bottom: 15px; font-weight: 600;">4-Month Minimum</div>
-                <p style="color: var(--text-med); font-size: 14px; line-height: 1.5;">Professional LTB management that perfectly aligns with standard file timelines.</p>
-              </div>
-              <div style="margin-top: 20px;">
-                <a href="https://buy.stripe.com/7sY4gA5NR7g32m92UHafS05" class="btn btn-primary" target="_blank" style="width: 100%; min-height: 48px; font-size: 14px; margin-bottom: 10px;">Subscribe Now</a>
-                <p style="font-size: 11px; color: var(--text-med); border-top: 1px solid var(--line-light); padding-top: 10px; margin-top: 5px;">First & last month required.</p>
-              </div>
-            </div>
 
             <div class="price-box">
               <div>
@@ -762,21 +743,6 @@
               <div style="margin-top: 20px;">
                 <a href="https://buy.stripe.com/28EfZi1xB1VJ3qdan9afS06" class="btn btn-primary" target="_blank" style="width: 100%; min-height: 48px; font-size: 14px; margin-bottom: 10px;">Subscribe Now</a>
                 <p style="font-size: 11px; color: var(--text-med); border-top: 1px solid var(--line-light); padding-top: 10px; margin-top: 5px;">Billed Monthly.</p>
-              </div>
-            </div>
-
-            <div class="price-box featured">
-              <div class="price-badge" style="background: #ef4444;">SAVE $939 UPFRONT</div>
-              <div>
-                <h4 style="font-size: 20px; margin: 0 0 10px; color: var(--text-dark);">Legal Guarantee Annual Pass</h4>
-                <div style="font-size: 15px; text-decoration: line-through; color: #ef4444; font-weight: 700;">$2,388</div>
-                <div style="font-size: 48px; font-weight: 900; line-height: 1; margin-bottom: 5px; color: var(--text-dark);">$1,449</div>
-                <div style="font-size: 13px; color: var(--text-med); margin-bottom: 15px; font-weight: 600;">One-Year Paid Upfront</div>
-                <p style="color: var(--text-dark); font-size: 14px; line-height: 1.5; font-weight: 700;">All-Inclusive LTB coverage for landlords who want the absolute lowest cost.</p>
-              </div>
-              <div style="margin-top: 20px;">
-                <a href="https://buy.stripe.com/bJedRaforasfgcZan9afS08" class="btn btn-primary" target="_blank" style="width: 100%; min-height: 48px; font-size: 14px; margin-bottom: 10px; background: #111827;">Get Annual Pass</a>
-                <p style="font-size: 11px; color: var(--text-med); border-top: 1px solid var(--line-light); padding-top: 10px; margin-top: 5px;">Best Value Choice.</p>
               </div>
             </div>
 
@@ -816,7 +782,7 @@
             </div>
 
             <ul class="shield-features">
-              <li>Rent collection monitoring and missed payment alerts.</li>
+              <li>Full rent collection processing and a real-time rent ledger, easily downloadable from your landlord portal.</li>
               <li>Automatic reporting of positive and negative rent payments to Equifax via LandlordEzy.</li>
               <li>Immediate N4 Notice preparation if rent is missed.</li>
               <li>24/7 Access to your dedicated Buildium landlord portal.</li>
@@ -1023,17 +989,12 @@
     // Cost Calculator Logic
     const slider = document.getElementById("costSlider");
     const monthDisplay = document.getElementById("monthDisplay");
-    const calcMonthly = document.getElementById("calcMonthly");
     const calcAnnual = document.getElementById("calcAnnual");
 
     if(slider) {
       slider.addEventListener("input", function() {
         let months = parseInt(this.value);
         monthDisplay.textContent = months;
-        
-        // Month-to-Month logic (minimum 4 months billed)
-        let mmCost = Math.max(4, months) * 249;
-        calcMonthly.textContent = "$" + mmCost.toLocaleString();
         
         // 12-Month Plan logic (shows cash flow over X months)
         let annualCost = months * 199;
